@@ -27,7 +27,6 @@ void add_history(const struct pish_arg *arg)
     }
 
     /* 
-     * TODO:
      * - open (and create if needed) history file at pish_history_path.
      * - write out the command stored in `arg`; argv values are separated
      *   by a space.
@@ -55,7 +54,7 @@ void print_history()
         set_history_path();
     }
 
-    /* TODO: read history file and print with index */
+    // read history file and print with index */
     FILE *f = fopen(pish_history_path, "r");
     if (!f) {
         perror("Error opening history file");

@@ -46,7 +46,6 @@ void usage_error(void)
  */
 void parse_command(char *command, struct pish_arg *arg)
 {
-    // TODO
     // 1. Clear out the arg struct
     // 2. Parse the `command` buffer and update arg->argc & arg->argv.
     arg->argc = 0; 
@@ -146,17 +145,6 @@ int pish(FILE *fp)
             run(&arg);
         }
     }
-    /* TODO:
-     * Figure out how to read input and run commands on a loop.
-     * It should look something like:
-
-            while (prompt() && [TODO] {
-                parse_command(buf, &arg);
-                run(&arg);
-            }
-
-     * The [TODO] is where you read a line from `fp` into `buf`.
-     */
 
     return 0;
 }
@@ -164,9 +152,8 @@ int pish(FILE *fp)
 int main(int argc, char *argv[])
 {
     FILE *fp;
-
-    /* TODO: 
-     * Set up fp to either stdin or an open file.
+    
+    /* Set up fp to either stdin or an open file.
      * - If the shell is run without argument (argc == 1), use stdin.
      * - If the shell is run with 1 argument (argc == 2), use that argument
      *   as the file path to read from.
@@ -188,9 +175,8 @@ int main(int argc, char *argv[])
     }
     pish(fp);
 
-    /* TODO:
-     * close fp if it is not stdin.
-     */
+
+    // close fp if it is not stdin.
     if (argc == 2) {
         fclose(fp);
     }
